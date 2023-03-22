@@ -1,2 +1,2 @@
 # my-resume-page
-arifyildirim.netlify.app
+www.arifyildirim.netlify.app
