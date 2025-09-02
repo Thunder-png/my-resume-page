@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Arif Yıldırım - Yazılım Geliştirici</title>
-    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900"
-      rel="stylesheet"
-    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Theme & Animations -->
     <style type="text/tailwindcss">
       :root {
         --primary-color: #137fec;
@@ -20,7 +23,7 @@
         --accent-color: #f0f0f0;
         --neumorphic-light: #ffffff;
         --neumorphic-dark: #bebebe;
-        --glass-background: rgba(240, 240, 240, 0.5);
+        --glass-background: rgba(240, 240, 240, 0.55);
       }
       .dark {
         --primary-color: #ffc700;
@@ -33,441 +36,273 @@
         --neumorphic-dark: #1e1c18;
         --glass-background: rgba(59, 56, 48, 0.6);
       }
-      body {
-        font-family: "Manrope", sans-serif;
-        background-color: var(--background-color);
-        color: var(--text-primary);
-      }
-      .shadow-neumorphic-light-xl {
-        box-shadow: 8px 8px 16px var(--neumorphic-dark),
-          -8px -8px 16px var(--neumorphic-light);
-      }
-      .shadow-neumorphic-light-sm {
-        box-shadow: 4px 4px 8px var(--neumorphic-dark),
-          -4px -4px 8px var(--neumorphic-light);
-      }
-      .shadow-neumorphic-dark-inset {
-        box-shadow: inset 4px 4px 8px var(--neumorphic-dark),
-          inset -4px -4px 8px var(--neumorphic-light);
-      }
-      .theme-switch {
-        position: relative;
-        display: inline-block;
-        width: 50px;
-        height: 28px;
-      }
-      .theme-switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-      .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: var(--accent-color);
-        transition: 0.4s;
-        border-radius: 28px;
-        box-shadow: inset 2px 2px 4px var(--neumorphic-dark),
-          inset -2px -2px 4px var(--neumorphic-light);
-      }
-      .slider:before {
-        position: absolute;
-        content: "";
-        height: 20px;
-        width: 20px;
-        left: 4px;
-        bottom: 4px;
-        background-color: var(--background-color);
-        transition: 0.4s;
-        border-radius: 50%;
-        box-shadow: 2px 2px 4px var(--neumorphic-dark),
-          -2px -2px 4px var(--neumorphic-light);
-      }
-      input:checked + .slider {
-        background-color: var(--accent-color);
-      }
-      input:checked + .slider:before {
-        transform: translateX(22px);
+      body { font-family: "Manrope", sans-serif; background-color: var(--background-color); color: var(--text-primary); }
+
+      /* Neumorphism helpers (existing) */
+      .shadow-neumorphic-light-xl { box-shadow: 8px 8px 16px var(--neumorphic-dark), -8px -8px 16px var(--neumorphic-light); }
+      .shadow-neumorphic-light-sm { box-shadow: 4px 4px 8px var(--neumorphic-dark), -4px -4px 8px var(--neumorphic-light); }
+      .shadow-neumorphic-dark-inset { box-shadow: inset 4px 4px 8px var(--neumorphic-dark), inset -4px -4px 8px var(--neumorphic-light); }
+
+      /* Toggle switch */
+      .theme-switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+      .theme-switch input { opacity: 0; width: 0; height: 0; }
+      .slider { position: absolute; cursor: pointer; inset: 0; background-color: var(--accent-color); transition: .4s; border-radius: 28px; box-shadow: inset 2px 2px 4px var(--neumorphic-dark), inset -2px -2px 4px var(--neumorphic-light); }
+      .slider:before { content: ""; position: absolute; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: var(--background-color); transition: .4s; border-radius: 50%; box-shadow: 2px 2px 4px var(--neumorphic-dark), -2px -2px 4px var(--neumorphic-light); }
+      input:checked + .slider { background-color: var(--accent-color); }
+      input:checked + .slider:before { transform: translateX(22px); }
+
+      /* ---------- Animations ---------- */
+      @keyframes fade-in-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+      @keyframes blob { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(20px,-10px) scale(1.05); } 66% { transform: translate(-10px,10px) scale(0.98); } }
+      @keyframes shine { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+      @keyframes slide-down { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+      .reveal { opacity: 0; transform: translateY(12px); }
+      .reveal.is-visible { animation: fade-in-up var(--a-dur, .7s) cubic-bezier(.22,.61,.36,1) var(--a-delay, 0s) both; }
+      .animate-blob { animation: blob 18s ease-in-out infinite; }
+      .animation-delay-2000 { animation-delay: 2s; }
+      .animation-delay-4000 { animation-delay: 4s; }
+      .shine { position: relative; overflow: hidden; }
+      .shine::after { content: ""; position: absolute; inset: -1px; background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,.25) 30%, transparent 60%); background-size: 200% 100%; transform: skewX(-10deg); animation: shine 3.2s linear infinite; opacity: 0; }
+      .shine:hover::after { opacity: 1; }
+
+      /* Gradient ring helper */
+      .gradient-ring { position: relative; }
+      .gradient-ring::before { content: ""; position: absolute; inset: 0; padding: 1px; border-radius: 24px; background: linear-gradient(135deg, color-mix(in oklab, var(--primary-color) 80%, transparent), color-mix(in oklab, var(--secondary-color) 70%, transparent)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
+
+      /* Nav link underline */
+      .nav-link { position: relative; }
+      .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent); transform: scaleX(0); transform-origin: center; transition: transform .35s ease; border-radius: 9999px; }
+      .nav-link:hover::after { transform: scaleX(1); }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
       }
     </style>
+
     <script>
-      function toggleTheme() {
-        document.documentElement.classList.toggle("dark");
-      }
+      // Persisted theme + enhancements
+      document.addEventListener('DOMContentLoaded', () => {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+        const toggle = document.querySelector('#themeToggle');
+        if (toggle) {
+          toggle.checked = document.documentElement.classList.contains('dark');
+          toggle.addEventListener('change', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+          });
+        }
+
+        // Scroll reveal
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              io.unobserve(e.target);
+            }
+          }
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Mobile nav
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        if (menuBtn && mobileNav) {
+          menuBtn.addEventListener('click', () => {
+            const wasHidden = mobileNav.classList.contains('hidden');
+            mobileNav.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', wasHidden ? 'true' : 'false');
+          });
+        }
+
+        // Tilt on portfolio cards
+        document.querySelectorAll('[data-tilt]').forEach((card) => {
+          const reset = () => { card.style.transform = ''; };
+          card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left, y = e.clientY - r.top;
+            const rx = ((y / r.height) - 0.5) * 6;
+            const ry = ((x / r.width) - 0.5) * -6;
+            card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+          });
+          card.addEventListener('mouseleave', reset);
+          card.addEventListener('blur', reset, true);
+        });
+      });
     </script>
   </head>
+
   <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-[var(--background-color)] group/design-root overflow-x-hidden"
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        <header
-          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-700/50 bg-[var(--glass-background)] px-10 py-4 backdrop-blur-md"
-        >
-          <div class="flex items-center gap-4 text-[var(--text-primary)]">
-            <div class="size-6 text-[var(--primary-color)]">
-              <svg
-                fill="none"
-                viewBox="0 0 48 48"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g clip-path="url(#clip0_6_535)">
-                  <path
-                    clip-rule="evenodd"
-                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
-                    fill="currentColor"
-                    fill-rule="evenodd"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_535">
-                    <rect fill="white" height="48" width="48"></rect>
-                  </clipPath>
-                </defs>
+    <div class="relative min-h-screen flex flex-col bg-[var(--background-color)]">
+      <!-- Ambient animated blobs (subtle) -->
+      <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div class="absolute -top-28 -left-24 size-80 rounded-full bg-[var(--primary-color)]/30 blur-3xl animate-blob"></div>
+        <div class="absolute top-1/3 -right-28 size-80 rounded-full bg-[var(--secondary-color)]/30 blur-3xl animate-blob animation-delay-2000"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 size-96 rounded-full bg-amber-400/20 dark:bg-amber-300/10 blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+
+      <header class="sticky top-0 z-50 border-b border-gray-700/40 bg-[var(--glass-background)] backdrop-blur-xl">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 py-3 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="size-7 text-[var(--primary-color)]">
+              <!-- logo -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"/>
               </svg>
             </div>
-            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">
-              Arif Yıldırım
-            </h2>
+            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight">Arif Yıldırım</h1>
           </div>
-          <nav class="hidden md:flex items-center gap-9">
-            <a
-              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
-              href="#about"
-              >About Me</a
-            >
-            <a
-              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
-              href="#experience"
-              >Experience</a
-            >
-            <a
-              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
-              href="#skills"
-              >Skills</a
-            >
-            <a
-              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
-              href="#portfolio"
-              >Portfolio</a
-            >
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a class="nav-link text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition" href="#about">About Me</a>
+            <a class="nav-link text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition" href="#experience">Experience</a>
+            <a class="nav-link text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition" href="#skills">Skills</a>
+            <a class="nav-link text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition" href="#portfolio">Portfolio</a>
           </nav>
-          <div class="flex items-center gap-4">
-            <div
-              class="flex items-center bg-[var(--accent-color)] rounded-full p-1 shadow-neumorphic-dark-inset"
-            >
-              <button
-                class="px-3 py-1 rounded-full text-sm font-medium text-[var(--text-primary)] bg-[var(--background-color)] shadow-neumorphic-light-sm"
-              >
-                EN
-              </button>
-              <button
-                class="px-3 py-1 rounded-full text-sm font-medium text-[var(--text-secondary)]"
-              >
-                TR
-              </button>
+
+          <div class="flex items-center gap-3">
+            <div class="hidden sm:flex items-center bg-[var(--accent-color)] rounded-full p-1 shadow-neumorphic-dark-inset">
+              <button class="px-3 py-1 rounded-full text-xs font-semibold text-[var(--text-primary)] bg-[var(--background-color)] shadow-neumorphic-light-sm">EN</button>
+              <button class="px-3 py-1 rounded-full text-xs font-semibold text-[var(--text-secondary)]">TR</button>
             </div>
-            <label class="theme-switch">
-              <input onchange="toggleTheme()" type="checkbox" />
+            <label class="theme-switch" title="Temayı değiştir">
+              <input id="themeToggle" type="checkbox" />
               <span class="slider"></span>
             </label>
-            <button
-              class="flex md:hidden max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[var(--neumorphic-light)] text-[var(--text-primary)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 shadow-neumorphic-light-sm hover:shadow-neumorphic-dark-inset transition-all duration-300"
-            >
-              <div
-                class="text-[var(--text-primary)]"
-                data-icon="List"
-                data-size="20px"
-                data-weight="regular"
-              >
-                <svg
-                  fill="currentColor"
-                  height="20px"
-                  viewBox="0 0 256 256"
-                  width="20px"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
-                  ></path>
-                </svg>
-              </div>
+            <button id="menuBtn" aria-expanded="false" aria-controls="mobileNav" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[var(--neumorphic-light)] text-[var(--text-primary)] shadow-neumorphic-light-sm hover:shadow-neumorphic-dark-inset transition-all shine" type="button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/></svg>
             </button>
-            <div
-              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--primary-color)]"
-              style="
-                background-image: url('./profile.jpg');
-              "
-            ></div>
+            <div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-[var(--primary-color)]" style="background-image:url('./profile.jpg')"></div>
           </div>
-        </header>
-        <main
-          class="px-5 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-10"
-        >
-          <div
-            class="layout-content-container flex flex-col max-w-4xl flex-1 gap-12"
-          >
-            <section
-              class="flex flex-col md:flex-row items-center gap-10 p-8 bg-[var(--neumorphic-light)] rounded-3xl shadow-neumorphic-light-xl border border-[var(--neumorphic-dark)]"
-              id="about"
-            >
+        </div>
+        <!-- Mobile nav -->
+        <div id="mobileNav" class="md:hidden mx-3 mb-3 hidden">
+          <div class="rounded-2xl border border-gray-700/40 bg-[var(--glass-background)] backdrop-blur-xl p-3 animate-[slide-down_.35s_ease-out]">
+            <div class="flex flex-col divide-y divide-gray-700/20">
+              <a class="py-2 text-[var(--text-primary)]" href="#about">About Me</a>
+              <a class="py-2 text-[var(--text-primary)]" href="#experience">Experience</a>
+              <a class="py-2 text-[var(--text-primary)]" href="#skills">Skills</a>
+              <a class="py-2 text-[var(--text-primary)]" href="#portfolio">Portfolio</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="flex-1 px-5 sm:px-10 md:px-20 lg:px-40 py-10">
+        <div class="mx-auto max-w-4xl flex flex-col gap-12">
+          <!-- About -->
+          <section id="about" class="reveal gradient-ring rounded-3xl p-8 bg-[var(--neumorphic-light)] border border-[var(--neumorphic-dark)] shadow-neumorphic-light-xl" style="--a-delay:.05s">
+            <div class="flex flex-col md:flex-row items-center gap-10">
               <div class="flex-shrink-0">
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-40 h-40 border-4 border-[var(--primary-color)] shadow-lg"
-                  style="background-image: url(./profile.jpg)"
-                ></div>
+                <div class="bg-center bg-no-repeat bg-cover rounded-full w-40 h-40 border-4 border-[var(--primary-color)] shadow-lg shine" style="background-image:url('./profile.jpg')"></div>
               </div>
-              <div
-                class="flex flex-col items-center md:items-start text-center md:text-left"
-              >
-                <h1
-                  class="text-4xl font-extrabold text-[var(--text-primary)] mb-2 leading-tight"
-                >
-                  Arif Yıldırım
-                </h1>
-                <p class="text-[var(--text-secondary)] text-lg font-medium">
-                  Yazılım Geliştirici
-                </p>
-                <p
-                  class="text-[var(--text-secondary)] text-lg font-medium mb-4"
-                >
-                  Ankara, TR
-                </p>
-                <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
-                  Yönetim Bilişim Sistemleri mezunuyum. Web geliştirme, sistem
-                  desteği ve otomasyon üzerine çalışıyorum. HTML, CSS,
-                  JavaScript, Python ve Django gibi teknolojilere hakimim.
-                  Ayrıca teknik destek süreçleri, ön muhasebe ve ERP
-                  sistemleriyle ilgili bilgi sahibiyim. İlgi alanlarım arasında
-                  yazılım geliştirme, UI/UX mantığı, sistem yönetimi ve komut
-                  satırı tabanlı araçlar yer alıyor.
-                </p>
+              <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                <h2 class="text-4xl font-extrabold leading-tight mb-2 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] bg-clip-text text-transparent">Arif Yıldırım</h2>
+                <p class="text-[var(--text-secondary)] text-lg font-semibold">Yazılım Geliştirici</p>
+                <p class="text-[var(--text-secondary)] text-lg font-medium mb-4">Ankara, TR</p>
+                <p class="text-lg text-[var(--text-secondary)] leading-relaxed">Yönetim Bilişim Sistemleri mezunuyum. Web geliştirme, sistem desteği ve otomasyon üzerine çalışıyorum. HTML, CSS, JavaScript, Python ve Django gibi teknolojilere hakimim. Ayrıca teknik destek süreçleri, ön muhasebe ve ERP sistemleriyle ilgili bilgi sahibiyim. İlgi alanlarım arasında yazılım geliştirme, UI/UX mantığı, sistem yönetimi ve komut satırı tabanlı araçlar yer alıyor.</p>
               </div>
-            </section>
-            <section
-              class="p-8 bg-[var(--glass-background)] backdrop-blur-md rounded-3xl border border-gray-700/50 shadow-lg"
-              id="experience"
-            >
-              <h2
-                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
-              >
-                Experience
-              </h2>
-              <div class="space-y-6">
-                <div class="flex gap-6">
-                  <div
-                    class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="32px"
-                      viewBox="0 0 256 256"
-                      width="32px"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="flex-1">
-                    <p class="text-[var(--text-primary)] text-xl font-bold">
-                      Freelance Web Developer
-                    </p>
-                    <p
-                      class="text-[var(--text-secondary)] text-base font-medium"
-                    >
-                      ITB (Remote)
-                    </p>
-                    <p class="text-[var(--text-secondary)] text-sm">
-                      2023 - Günümüz
-                    </p>
-                  </div>
+            </div>
+          </section>
+
+          <!-- Experience -->
+          <section id="experience" class="reveal rounded-3xl p-8 bg-[var(--glass-background)] backdrop-blur-xl border border-gray-700/40 shadow-lg" style="--a-delay:.1s">
+            <h2 class="text-4xl font-bold text-center mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-[var(--primary-color)] after:rounded-full">Experience</h2>
+            <div class="space-y-6">
+              <div class="flex gap-6 group">
+                <div class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm group-hover:scale-105 transition-transform">
+                  <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="32" height="32"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"/></svg>
                 </div>
-                <div class="flex gap-6">
-                  <div
-                    class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm"
-                  >
-                    <svg
-                      fill="currentColor"
-                      height="32px"
-                      viewBox="0 0 256 256"
-                      width="32px"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="flex-1">
-                    <p class="text-[var(--text-primary)] text-xl font-bold">
-                      Muhasebe Stajyeri
-                    </p>
-                    <p
-                      class="text-[var(--text-secondary)] text-base font-medium"
-                    >
-                      Ünal Akpınar İnşaat Turizm A.Ş.
-                    </p>
-                    <p class="text-[var(--text-secondary)] text-sm">
-                      2015 - 2016
-                    </p>
-                  </div>
+                <div class="flex-1 gradient-ring rounded-3xl p-4">
+                  <p class="text-xl font-bold">Freelance Web Developer</p>
+                  <p class="text-[var(--text-secondary)] font-medium">ITB (Remote)</p>
+                  <p class="text-[var(--text-secondary)] text-sm">2023 - Günümüz</p>
                 </div>
               </div>
-            </section>
-            <section
-              class="p-8 bg-[var(--neumorphic-light)] rounded-3xl shadow-neumorphic-light-xl border border-[var(--neumorphic-dark)]"
-              id="skills"
-            >
-              <h2
-                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
-              >
-                Skills
-              </h2>
-              <div class="flex gap-3 flex-wrap justify-center">
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  HTML
+              <div class="flex gap-6 group">
+                <div class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm group-hover:scale-105 transition-transform">
+                  <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="32" height="32"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"/></svg>
                 </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  CSS
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  JavaScript
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Tailwind CSS
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  React.js
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Python
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Django
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Git
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  SQL
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Ubuntu
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Technical Support
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  CMS
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  ERP
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Responsive Design
-                </div>
-                <div
-                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
-                >
-                  Excel &amp; Raporlama
+                <div class="flex-1 gradient-ring rounded-3xl p-4">
+                  <p class="text-xl font-bold">Muhasebe Stajyeri</p>
+                  <p class="text-[var(--text-secondary)] font-medium">Ünal Akpınar İnşaat Turizm A.Ş.</p>
+                  <p class="text-[var(--text-secondary)] text-sm">2015 - 2016</p>
                 </div>
               </div>
-            </section>
-            <section
-              class="p-8 bg-[var(--glass-background)] backdrop-blur-md rounded-3xl border border-gray-700/50 shadow-lg"
-              id="portfolio"
-            >
-              <h2
-                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
-              >
-                Portfolio
-              </h2>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="https://sobil-cloud.pages.dev/">
-                  <div class="flex flex-col gap-4 group">
-                    <div
-                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
-                      style="
-                        background-image: url(./assets/img/portfolio/sobil.jpg);
-                      "
-                    ></div>
-                    <p
-                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
-                    >
-                      Sobil Cloud Services Website
-                    </p>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section id="skills" class="reveal gradient-ring rounded-3xl p-8 bg-[var(--neumorphic-light)] border border-[var(--neumorphic-dark)] shadow-neumorphic-light-xl" style="--a-delay:.15s">
+            <h2 class="text-4xl font-bold text-center mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-[var(--primary-color)] after:rounded-full">Skills</h2>
+            <div class="flex gap-3 flex-wrap justify-center">
+              <!-- same items, just nicer hovers -->
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">HTML</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">CSS</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">JavaScript</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Tailwind CSS</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">React.js</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Python</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Django</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Git</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">SQL</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Ubuntu</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Technical Support</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">CMS</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">ERP</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Responsive Design</span>
+              <span class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm hover:-translate-y-0.5 hover:shadow-neumorphic-dark-inset transition">Excel &amp; Raporlama</span>
+            </div>
+          </section>
+
+          <!-- Portfolio -->
+          <section id="portfolio" class="reveal rounded-3xl p-8 bg-[var(--glass-background)] backdrop-blur-xl border border-gray-700/40 shadow-lg" style="--a-delay:.2s">
+            <h2 class="text-4xl font-bold text-center mb-8 relative after:content-[''] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-[var(--primary-color)] after:rounded-full">Portfolio</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <a class="group" href="https://sobil-cloud.pages.dev/" target="_blank" rel="noreferrer">
+                <div class="gradient-ring rounded-2xl p-2">
+                  <div data-tilt tabindex="0" class="rounded-xl overflow-hidden bg-[var(--neumorphic-light)] shadow-neumorphic-light-xl transition-transform duration-300">
+                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style="background-image:url('./assets/img/portfolio/sobil.jpg')"></div>
+                    <p class="p-4 text-center text-lg font-semibold">Sobil Cloud Services Website</p>
                   </div>
-                </a>
-                <a href="https://nature-next.netlify.app/">
-                  <div class="flex flex-col gap-4 group">
-                    <div
-                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
-                      style="
-                        background-image: url(./assets/img/portfolio/nature.jpg);
-                      "
-                    ></div>
-                    <p
-                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
-                    >
-                      Nature Landing Page (HTML5 & Bootstrap)
-                    </p>
+                </div>
+              </a>
+
+              <a class="group" href="https://nature-next.netlify.app/" target="_blank" rel="noreferrer">
+                <div class="gradient-ring rounded-2xl p-2">
+                  <div data-tilt tabindex="0" class="rounded-xl overflow-hidden bg-[var(--neumorphic-light)] shadow-neumorphic-light-xl transition-transform duration-300">
+                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style="background-image:url('./assets/img/portfolio/nature.jpg')"></div>
+                    <p class="p-4 text-center text-lg font-semibold">Nature Landing Page (HTML5 & Bootstrap)</p>
                   </div>
-                </a>
-                <a href="https://aifunhub.netlify.app/">
-                  <div class="flex flex-col gap-4 group">
-                    <div
-                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
-                      style="
-                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14MqeC8NYX3VTMfhm7FWLImwGXtmFrmW9p206pK8gG0f7G8ecKWL-27wszkdFBUBQPnAxhwdlC9p5aAenO7khBxOTFpiqSQ4qofqV7aV0q77_6QH7HfO1I1vDP0ErLQ2P1IhdKHV0vji7Q_cnQAD1P1g61_S8ZIw79eTrMofnA3xUpZWXtVnChPsMRuYllWmEA_J1eEFt5cOrcYUd2Xv8-SrEnHiHwZWQbt2zk70Ef_UyHeOhnqnTZESJ9vmV5AE-AZogddZ_ATk');
-                      "
-                    ></div>
-                    <p
-                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
-                    >
-                      AI FunHub SaaS Platform (Express.js, Vite.js & Tailwind
-                      CSS)
-                    </p>
+                </div>
+              </a>
+
+              <a class="group" href="https://aifunhub.netlify.app/" target="_blank" rel="noreferrer">
+                <div class="gradient-ring rounded-2xl p-2">
+                  <div data-tilt tabindex="0" class="rounded-xl overflow-hidden bg-[var(--neumorphic-light)] shadow-neumorphic-light-xl transition-transform duration-300">
+                    <div class="w-full bg-center bg-no-repeat aspect-square bg-cover" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14MqeC8NYX3VTMfhm7FWLImwGXtmFrmW9p206pK8gG0f7G8ecKWL-27wszkdFBUBQPnAxhwdlC9p5aAenO7khBxOTFpiqSQ4qofqV7aV0q77_6QH7HfO1I1vDP0ErLQ2P1IhdKHV0vji7Q_cnQAD1P1g61_S8ZIw79eTrMofnA3xUpZWXtVnChPsMRuYllWmEA_J1eEFt5cOrcYUd2Xv8-SrEnHiHwZWQbt2zk70Ef_UyHeOhnqnTZESJ9vmV5AE-AZogddZ_ATk')"></div>
+                    <p class="p-4 text-center text-lg font-semibold">AI FunHub SaaS Platform (Express.js, Vite.js & Tailwind CSS)</p>
                   </div>
-                </a>
-              </div>
-            </section>
-          </div>
-        </main>
-      </div>
+                </div>
+              </a>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="py-10 text-center text-sm text-[var(--text-secondary)]">
+        <p>© <span id="year"></span> Arif Yıldırım</p>
+      </footer>
     </div>
+
+    <script>
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
