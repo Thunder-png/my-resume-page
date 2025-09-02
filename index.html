@@ -1,457 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Yıldırım</title>
-    <!--Import Local CSS-->
-    <link rel="stylesheet" href="assets/css/normalize.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet"
-      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Arif Yıldırım - Yazılım Geliştirici</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary-color: #137fec;
+        --secondary-color: #0f68c4;
+        --background-color: #e0e0e0;
+        --text-primary: #1a1a1a;
+        --text-secondary: #5a5a5a;
+        --accent-color: #f0f0f0;
+        --neumorphic-light: #ffffff;
+        --neumorphic-dark: #bebebe;
+        --glass-background: rgba(240, 240, 240, 0.5);
+      }
+      .dark {
+        --primary-color: #ffc700;
+        --secondary-color: #e6b300;
+        --background-color: #2c2a24;
+        --text-primary: #f5f5f5;
+        --text-secondary: #b0a999;
+        --accent-color: #3b3830;
+        --neumorphic-light: #3a372f;
+        --neumorphic-dark: #1e1c18;
+        --glass-background: rgba(59, 56, 48, 0.6);
+      }
+      body {
+        font-family: "Manrope", sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .shadow-neumorphic-light-xl {
+        box-shadow: 8px 8px 16px var(--neumorphic-dark),
+          -8px -8px 16px var(--neumorphic-light);
+      }
+      .shadow-neumorphic-light-sm {
+        box-shadow: 4px 4px 8px var(--neumorphic-dark),
+          -4px -4px 8px var(--neumorphic-light);
+      }
+      .shadow-neumorphic-dark-inset {
+        box-shadow: inset 4px 4px 8px var(--neumorphic-dark),
+          inset -4px -4px 8px var(--neumorphic-light);
+      }
+      .theme-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+      }
+      .theme-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--accent-color);
+        transition: 0.4s;
+        border-radius: 28px;
+        box-shadow: inset 2px 2px 4px var(--neumorphic-dark),
+          inset -2px -2px 4px var(--neumorphic-light);
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 4px;
+        bottom: 4px;
+        background-color: var(--background-color);
+        transition: 0.4s;
+        border-radius: 50%;
+        box-shadow: 2px 2px 4px var(--neumorphic-dark),
+          -2px -2px 4px var(--neumorphic-light);
+      }
+      input:checked + .slider {
+        background-color: var(--accent-color);
+      }
+      input:checked + .slider:before {
+        transform: translateX(22px);
+      }
+    </style>
+    <script>
+      function toggleTheme() {
+        document.documentElement.classList.toggle("dark");
+      }
+    </script>
   </head>
-  <body class="page">
-    <div class="lm-animated-bg"></div>
-    <!-- Loading animation -->
-    <div class="preloader">
-      <div class="preloader-animation">
-        <div class="preloader-spinner"></div>
-      </div>
-    </div>
-    <!-- Loading animation -->
-    <!-- Scroll To Top Button -->
-    <div class="lmpixels-scroll-to-top">
-      <i class="lnr lnr-chevron-up"></i>
-    </div>
-    <!-- /Scroll To Top Button -->
-    <div class="page-scroll">
-      <div id="page_container" class="page-container bg-move-effect"
-        data-animation="transition-flip-in-right">
-        <!-- Header -->
-        <header id="site_header" class="header">
-          <div class="header-content clearfix">
-            <!-- Text Logo -->
-            <div class="text-logo">
-              <a href="index.html">
-                <div class="logo-symbol">A</div>
-                <div class="logo-text">Arif <span>Yıldırım</span>
-                </div>
-              </a>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[var(--background-color)] group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-700/50 bg-[var(--glass-background)] px-10 py-4 backdrop-blur-md"
+        >
+          <div class="flex items-center gap-4 text-[var(--text-primary)]">
+            <div class="size-6 text-[var(--primary-color)]">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clip-path="url(#clip0_6_535)">
+                  <path
+                    clip-rule="evenodd"
+                    d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_535">
+                    <rect fill="white" height="48" width="48"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-            <!-- Navigation -->
-            <div class="site-nav mobile-menu-hide">
-              <ul class="leven-classic-menu site-main-menu">
-                <li class="menu-item current-menu-item">
-                  <a href="index.html">About Me</a>
-                </li>
-                <li class="menu-item">
-                  <a href="https://github.com/Thunder-png">Github</a>
-                </li>
-                <li class="menu-item">
-                  <a href="resume.html">Resume</a>
-                </li>
-                <li class="menu-item">
-                  <a href="portfolio.html">Portfolio</a>
-                </li>
-                <li class="menu-item">
-                  <a href="blog.html">Blog</a>
-                  <ul class="sub-menu">
-                    <li class="menu-item">
-                      <a href="blog.html">Blog 2 Columns</a>
-                    </li>
-                    <li class="menu-item">
-                      <a href="blog-3-columns.html">Blog 3 Columns</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="menu-item">
-                  <a href="contact.html">Contact</a>
-                </li>
-              </ul>
+            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">
+              Arif Yıldırım
+            </h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-9">
+            <a
+              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
+              href="#about"
+              >About Me</a
+            >
+            <a
+              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
+              href="#experience"
+              >Experience</a
+            >
+            <a
+              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
+              href="#skills"
+              >Skills</a
+            >
+            <a
+              class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-sm font-medium leading-normal transition-colors"
+              href="#portfolio"
+              >Portfolio</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <div
+              class="flex items-center bg-[var(--accent-color)] rounded-full p-1 shadow-neumorphic-dark-inset"
+            >
+              <button
+                class="px-3 py-1 rounded-full text-sm font-medium text-[var(--text-primary)] bg-[var(--background-color)] shadow-neumorphic-light-sm"
+              >
+                EN
+              </button>
+              <button
+                class="px-3 py-1 rounded-full text-sm font-medium text-[var(--text-secondary)]"
+              >
+                TR
+              </button>
             </div>
-            <!-- Mobile Menu Toggle -->
-            <a class="menu-toggle mobile-visible">
-              <i class="fa fa-bars"></i>
-            </a>
-            <!-- Mobile Menu Toggle -->
+            <label class="theme-switch">
+              <input onchange="toggleTheme()" type="checkbox" />
+              <span class="slider"></span>
+            </label>
+            <button
+              class="flex md:hidden max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[var(--neumorphic-light)] text-[var(--text-primary)] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5 shadow-neumorphic-light-sm hover:shadow-neumorphic-dark-inset transition-all duration-300"
+            >
+              <div
+                class="text-[var(--text-primary)]"
+                data-icon="List"
+                data-size="20px"
+                data-weight="regular"
+              >
+                <svg
+                  fill="currentColor"
+                  height="20px"
+                  viewBox="0 0 256 256"
+                  width="20px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-[var(--primary-color)]"
+              style="
+                background-image: url('./profile.jpg');
+              "
+            ></div>
           </div>
         </header>
-        <!-- /Header -->
-        <div id="main" class="site-main">
-          <div id="main-content" class="single-page-content">
-            <div id="primary" class="content-area">
-              <div id="content" class="page-content site-content single-post"
-                role="main">
-                <!-- Home Page Top Part -->
-                <div class="row">
-                  <div class=" col-xs-12 col-sm-12">
-                    <div class="home-content">
-                      <div class="row flex-v-align">
-                        <div class="col-sm-12 col-md-5 col-lg-5">
-                          <div class="home-photo">
-                            <div class="hp-inner"
-                              style="background-image: url(./assets/img/profile-img.jpg);"></div>
-                          </div>
-                        </div>
-                        <div class="col-sm-12 col-md-7 col-lg-7">
-                          <div class="home-text hp-left">
-                            <div class="owl-carousel text-rotation">
-                              <div class="item">
-                                <h4>Frontend-developer</h4>
-                              </div>
-                              <div class="item">
-                                <h4>Web Designer</h4>
-                              </div>
-                            </div>
-                            <h1>Arif Yıldırım</h1>
-                            <p>Akdeniz Üniversitesinde Yönetim Bilişim
-                              Sistemleri bölümünden mezun oldum. Yönetim ve
-                              Bilişim sistemleri hakkında çeşitli eğitimler
-                              aldım. Ancak web alanı benim için daha ilgi
-                              çekiciydi. C++ ve Python programlama dilleri
-                              ilgilendiğim konular.Bu yüzden web geliştirme
-                              alanında, python kütüphane ve çerçevelerini
-                              kullanıyorum.(Django, Flask, FastApi)</p>
-                            <div class="home-buttons">
-                              <a href="assets/cv.pdf"
-                                download="Arif-Yıldırım-Cv"
-                                class="btn btn-primary">Download CV</a>
-                              <a href="#" target="_self"
-                                class="btn btn-secondary">Contact</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- Home Page Top Part -->
-                <!-- Services -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="p-50"></div>
-                    <div class="block-title">
-                      <h2>What I Do</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="info-list-w-icon">
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="fa-solid fa-pen-nib"></i>
-                        </div>
-                        <div class="ci-text">
-                          <h4>Copywrite</h4>
-                          <p>Özgün ve yaratıcı içerikler oluşturabilirim SEO
-                            uyumlu makaleler yazabilirim Blog yazıları, sosyal
-                            medya içerikleri, reklam metinleri ve daha fazlası
-                            konusunda deneyimliyim</p>
-                        </div>
-                      </div>
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="fa-solid fa-object-group"></i>
-                        </div>
-                        <div class="ci-text">
-                          <h4>Web Tasarımı</h4>
-                          <p>Modern, minimalist ve kullanıcı dostu web
-                            tasarımları yapabilirim HTML, CSS, ve JavaScript
-                            kullanarak responsive tasarımlar oluşturabilirim
-                            Wordpress, Shopify, Squarespace gibi platformlarda
-                            tasarım yapabilirim</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-6">
-                    <div class="info-list-w-icon">
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="fa-brands fa-python"></i>
-                        </div>
-                        <div class="ci-text">
-                          <h4>Django Framework</h4>
-                          <p>Django web framework'ü kullanarak özelleştirilmiş
-                            web uygulamaları geliştirebilirim API geliştirme ve
-                            RESTful servisler konusunda deneyimliyim SQLite,
-                            MSSQL, MongoDB gibi veritabanları ile çalışabilirim</p>
-                        </div>
-                      </div>
-                      <div class="info-block-w-icon">
-                        <div class="ci-icon">
-                          <i class="fa-brands fa-bootstrap"></i>
-                        </div>
-                        <div class="ci-text">
-                          <h4>Bootstrap</h4>
-                          <p>Bootstrap gibi popüler CSS frameworkleri kullanarak
-                            responsive web tasarımları yapabilirim
-                            Özelleştirilmiş Bootstrap tema oluşturma konusunda
-                            deneyimliyim Bootstrap eklentileri ve araçları
-                            hakkında bilgim var</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Services -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="p-20"></div>
-                    <!-- Testimonials -->
-                    <div class="block-title">
-                      <h2>Testimonials</h2>
-                    </div>
-                    <div id="testimonials_1" class="testimonials owl-carousel"
-                      data-mobile-items="1" data-tablet-items="2" data-items="2">
-                      <!-- Testimonial 1 -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Content -->
-                        <div class="testimonial-content">
-                          <!-- Picture -->
-                          <div class="testimonial-picture">
-                            <img src="assets/img/testimonial/testimonial-1.jpg"
-                              alt="Billy Adams" />
-                          </div>
-                          <!-- /Picture -->
-                          <!-- Testimonial Text -->
-                          <div class="testimonial-text">
-                            <p>Donec eu est vel metus consequat volutpat. Nunc
-                              aliquet euismod mauris, a feugiat urna ullamcorper
-                              non.</p>
-                          </div>
-                          <!-- /Testimonial Text -->
-                          <!-- Testimonial author information -->
-                          <div class="testimonial-author-info">
-                            <h5 class="testimonial-author">Billy Adams</h5>
-                            <p class="testimonial-firm">Rolling Thunder</p>
-                          </div>
-                          <!-- /Testimonial author information -->
-                          <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
-                          </div>
-                          <div class="testimonial-icon-big">
-                            <i class="fa fa-quote-right"></i>
-                          </div>
-                        </div>
-                        <!-- /Testimonial Content -->
-                      </div>
-                      <!-- End of Testimonial 1 -->
-                      <!-- Testimonial 2 -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Content -->
-                        <div class="testimonial-content">
-                          <!-- Picture -->
-                          <div class="testimonial-picture">
-                            <img src="assets/img/testimonial/testimonial-2.jpg"
-                              alt="Gary Johnson" />
-                          </div>
-                          <!-- /Picture -->
-                          <!-- Testimonial Text -->
-                          <div class="testimonial-text">
-                            <p>Nam tempor commodo mi id sodales. Aenean sit amet
-                              nibh nec sapien consequat porta a sit amet diam.</p>
-                          </div>
-                          <!-- /Testimonial Text -->
-                          <!-- Testimonial author information -->
-                          <div class="testimonial-author-info">
-                            <h5 class="testimonial-author">Gary Johnson</h5>
-                            <p class="testimonial-firm">Locost Accessories</p>
-                          </div>
-                          <!-- /Testimonial author information -->
-                          <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
-                          </div>
-                          <div class="testimonial-icon-big">
-                            <i class="fa fa-quote-right"></i>
-                          </div>
-                        </div>
-                        <!-- /Testimonial Content -->
-                      </div>
-                      <!-- End of Testimonial 2 -->
-                      <!-- End of Testimonial 3 -->
-                      <div class="testimonial-item">
-                        <!-- Testimonial Content -->
-                        <div class="testimonial-content">
-                          <!-- Picture -->
-                          <div class="testimonial-picture">
-                            <img src="assets/img/testimonial/testimonial-3.jpg"
-                              alt="Daniel Pringle" />
-                          </div>
-                          <!-- /Picture -->
-                          <!-- Testimonial Text -->
-                          <div class="testimonial-text">
-                            <p>Etiam pretium ipsum quis justo dictum accumsan.
-                              Phasellus egestas odio a velit scelerisque.</p>
-                          </div>
-                          <!-- /Testimonial Text -->
-                          <!-- Testimonial author information -->
-                          <div class="testimonial-author-info">
-                            <h5 class="testimonial-author">Daniel Pringle</h5>
-                            <p class="testimonial-firm">Sagebrush</p>
-                          </div>
-                          <!-- /Testimonial author information -->
-                          <div class="testimonial-icon">
-                            <i class="fa fa-quote-left"></i>
-                          </div>
-                          <div class="testimonial-icon-big">
-                            <i class="fa fa-quote-right"></i>
-                          </div>
-                        </div>
-                        <!-- /Testimonial Content -->
-                      </div>
-                      <!-- End of Testimonial 3 -->
-                    </div>
-                    <!-- /Testimonials -->
-                    <div class="p-40"></div>
-                    <!-- tools Slider -->
-                    <div class="block-title">
-                      <h2>Languages and Tools:</h2>
-                    </div>
-                    <div id="tools_1" class="tools owl-carousel"
-                      data-mobile-items="1" data-tablet-items="3" data-items="6">
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="Bootstrap">
-                          <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg"
-                            alt="Bootstrap">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="Django">
-                          <img
-                            src="https://cdn.worldvectorlogo.com/logos/django.svg"
-                            alt="Django">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="Flask">
-                          <img
-                            src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg"
-                            alt="Flask">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="Adobe Express">
-                          <img
-                            src="https://www.adobe.com/content/dam/cc/us/en/creativecloud/social-media/ccx-updates/ccx-outline-logo.svg"
-                            alt="Adobe Express">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="React">
-                          <img
-                            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
-                            alt="React">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="SQLite">
-                          <img
-                            src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg"
-                            alt="SQLite">
-                        </a>
-                      </div>
-                      <div class="tools-block">
-                        <a href="#" target="_blank" title="WordPress">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg"
-                            alt="WordPress">
-                        </a>
-                      </div>
-                    </div>
-                    <!-- /tools Slider -->
-                    <div class="p-40"></div>
-                  </div>
-                </div>
-                <!-- Fun Facts -->
-                <div class="row">
-                  <div class="col-xs-12 col-sm-12">
-                    <div class="block-title">
-                      <h2>Fun Facts</h2>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="lm-info-block gray-default">
-                      <ion-icon name="hammer-outline"></ion-icon>
-                      <h4>Working tools</h4>
-                      <span class="lm-info-block-value">578</span>
-                      <span class="lm-info-block-text"></span>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3">
-                    <div class="lm-info-block gray-default">
-                      <ion-icon name="time-outline"></ion-icon>
-                      <h4>Working Hours</h4>
-                      <span class="lm-info-block-value">4,780</span>
-                      <span class="lm-info-block-text"></span>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3 ">
-                    <div class="lm-info-block gray-default">
-                      <ion-icon name="star-outline"></ion-icon>
-                      <h4>Awards Won</h4>
-                      <span class="lm-info-block-value">15</span>
-                      <span class="lm-info-block-text"></span>
-                    </div>
-                  </div>
-                  <div class="col-xs-12 col-sm-3 ">
-                    <div class="lm-info-block gray-default">
-                      <ion-icon name="cafe-outline"></ion-icon>
-                      <h4>Coffee Consumed</h4>
-                      <span class="lm-info-block-value">1,286</span>
-                      <span class="lm-info-block-text"></span>
-                    </div>
-                  </div>
-                </div>
-                <!-- /Fun Facts -->
-                <!-- Footer -->
-                <footer class="site-footer clearfix">
-                  <div class="footer-social">
-                    <ul class="footer-social-links">
-                      <li>
-                        <a href="#" target="_blank">Twitter</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Facebook</a>
-                      </li>
-                      <li>
-                        <a href="#" target="_blank">Instagram</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="footer-copyrights">
-                    <p>© 2023 All rights reserved. @Thunder-png.</p>
-                  </div>
-                </footer>
-                <!-- /Footer -->
+        <main
+          class="px-5 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-10"
+        >
+          <div
+            class="layout-content-container flex flex-col max-w-4xl flex-1 gap-12"
+          >
+            <section
+              class="flex flex-col md:flex-row items-center gap-10 p-8 bg-[var(--neumorphic-light)] rounded-3xl shadow-neumorphic-light-xl border border-[var(--neumorphic-dark)]"
+              id="about"
+            >
+              <div class="flex-shrink-0">
+                <div
+                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-40 h-40 border-4 border-[var(--primary-color)] shadow-lg"
+                  style="background-image: url(./profile.jpg)"
+                ></div>
               </div>
-            </div>
-            <div class="p-40"></div>
-            <script src="assets/js/modernizr.custom.js"></script>
-            <script src="assets/js/jquery-2.1.3.min.js"></script>
-            <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-            <script src='assets/https://www.google.com/recaptcha/api.js'></script>
-            <script src="assets/js/bootstrap.min.js"></script>
-            <script src='assets/js/jquery.shuffle.min.js'></script>
-            <script src='assets/js/masonry.pkgd.min.js'></script>
-            <script src='assets/js/owl.carousel.min.js'></script>
-            <script src="assets/js/jquery.magnific-popup.min.js"></script>
-            <script
-              src="assets/https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
-            <script src="assets/js/jquery.googlemap.js"></script>
-            <script src="assets/js/validator.js"></script>
-            <script src="https://kit.fontawesome.com/22a0677c61.js"
-              crossorigin="anonymous"></script>
-            <script
-              src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-            <script src="assets/js/main.js"></script>
-          </body>
-        </html>
+              <div
+                class="flex flex-col items-center md:items-start text-center md:text-left"
+              >
+                <h1
+                  class="text-4xl font-extrabold text-[var(--text-primary)] mb-2 leading-tight"
+                >
+                  Arif Yıldırım
+                </h1>
+                <p class="text-[var(--text-secondary)] text-lg font-medium">
+                  Yazılım Geliştirici
+                </p>
+                <p
+                  class="text-[var(--text-secondary)] text-lg font-medium mb-4"
+                >
+                  Ankara, TR
+                </p>
+                <p class="text-lg text-[var(--text-secondary)] leading-relaxed">
+                  Yönetim Bilişim Sistemleri mezunuyum. Web geliştirme, sistem
+                  desteği ve otomasyon üzerine çalışıyorum. HTML, CSS,
+                  JavaScript, Python ve Django gibi teknolojilere hakimim.
+                  Ayrıca teknik destek süreçleri, ön muhasebe ve ERP
+                  sistemleriyle ilgili bilgi sahibiyim. İlgi alanlarım arasında
+                  yazılım geliştirme, UI/UX mantığı, sistem yönetimi ve komut
+                  satırı tabanlı araçlar yer alıyor.
+                </p>
+              </div>
+            </section>
+            <section
+              class="p-8 bg-[var(--glass-background)] backdrop-blur-md rounded-3xl border border-gray-700/50 shadow-lg"
+              id="experience"
+            >
+              <h2
+                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
+              >
+                Experience
+              </h2>
+              <div class="space-y-6">
+                <div class="flex gap-6">
+                  <div
+                    class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="32px"
+                      viewBox="0 0 256 256"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-[var(--text-primary)] text-xl font-bold">
+                      Freelance Web Developer
+                    </p>
+                    <p
+                      class="text-[var(--text-secondary)] text-base font-medium"
+                    >
+                      ITB (Remote)
+                    </p>
+                    <p class="text-[var(--text-secondary)] text-sm">
+                      2023 - Günümüz
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-6">
+                  <div
+                    class="text-[var(--primary-color)] flex items-center justify-center rounded-lg bg-[var(--accent-color)] shrink-0 size-16 p-3 shadow-neumorphic-light-sm"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="32px"
+                      viewBox="0 0 256 256"
+                      width="32px"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm120,152H40V72H80v16a8,8,0,0,0,16,0V72h64v16a8,8,0,0,0,16,0V72h40Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-[var(--text-primary)] text-xl font-bold">
+                      Muhasebe Stajyeri
+                    </p>
+                    <p
+                      class="text-[var(--text-secondary)] text-base font-medium"
+                    >
+                      Ünal Akpınar İnşaat Turizm A.Ş.
+                    </p>
+                    <p class="text-[var(--text-secondary)] text-sm">
+                      2015 - 2016
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section
+              class="p-8 bg-[var(--neumorphic-light)] rounded-3xl shadow-neumorphic-light-xl border border-[var(--neumorphic-dark)]"
+              id="skills"
+            >
+              <h2
+                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
+              >
+                Skills
+              </h2>
+              <div class="flex gap-3 flex-wrap justify-center">
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  HTML
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  CSS
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  JavaScript
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Tailwind CSS
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  React.js
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Python
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Django
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Git
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  SQL
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Ubuntu
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Technical Support
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  CMS
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  ERP
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Responsive Design
+                </div>
+                <div
+                  class="inline-block bg-[var(--accent-color)] text-[var(--text-secondary)] px-5 py-2 rounded-full text-sm font-medium shadow-neumorphic-light-sm"
+                >
+                  Excel &amp; Raporlama
+                </div>
+              </div>
+            </section>
+            <section
+              class="p-8 bg-[var(--glass-background)] backdrop-blur-md rounded-3xl border border-gray-700/50 shadow-lg"
+              id="portfolio"
+            >
+              <h2
+                class="text-4xl font-bold text-[var(--text-primary)] mb-8 text-center relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-[var(--primary-color)] after:rounded-full"
+              >
+                Portfolio
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="https://sobil-cloud.pages.dev/">
+                  <div class="flex flex-col gap-4 group">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                      style="
+                        background-image: url(./assets/img/portfolio/sobil.jpg);
+                      "
+                    ></div>
+                    <p
+                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
+                    >
+                      Sobil Cloud Services Website
+                    </p>
+                  </div>
+                </a>
+                <a href="https://nature-next.netlify.app/">
+                  <div class="flex flex-col gap-4 group">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                      style="
+                        background-image: url(./assets/img/portfolio/nature.jpg);
+                      "
+                    ></div>
+                    <p
+                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
+                    >
+                      Nature Landing Page (HTML5 & Bootstrap)
+                    </p>
+                  </div>
+                </a>
+                <a href="https://aifunhub.netlify.app/">
+                  <div class="flex flex-col gap-4 group">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl overflow-hidden transform group-hover:scale-105 transition-transform duration-300"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14MqeC8NYX3VTMfhm7FWLImwGXtmFrmW9p206pK8gG0f7G8ecKWL-27wszkdFBUBQPnAxhwdlC9p5aAenO7khBxOTFpiqSQ4qofqV7aV0q77_6QH7HfO1I1vDP0ErLQ2P1IhdKHV0vji7Q_cnQAD1P1g61_S8ZIw79eTrMofnA3xUpZWXtVnChPsMRuYllWmEA_J1eEFt5cOrcYUd2Xv8-SrEnHiHwZWQbt2zk70Ef_UyHeOhnqnTZESJ9vmV5AE-AZogddZ_ATk');
+                      "
+                    ></div>
+                    <p
+                      class="text-[var(--text-primary)] text-lg font-semibold text-center"
+                    >
+                      AI FunHub SaaS Platform (Express.js, Vite.js & Tailwind
+                      CSS)
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
