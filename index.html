@@ -7,16 +7,16 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-Dto9o9iS1Z8nQf7T9GqYxX2vYkWbF3P2q3kYt6m3x1Jx2YjQz3l2bKk4H6L5o7P8Q9R0S1T2U3V4W5X6Y7Z8w=="
+    <script
+      src="https://kit.fontawesome.com/22a0677c61.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    ></script>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -37,7 +37,7 @@
         --gradient-start: #3b82f6;
         --gradient-end: #06b6d4;
       }
-      
+
       .dark {
         --primary-color: #60a5fa;
         --secondary-color: #3b82f6;
@@ -53,36 +53,43 @@
         --gradient-end: #06b6d4;
       }
 
-      body { 
-        font-family: "Inter", sans-serif; 
+      body {
+        font-family: "Inter", sans-serif;
         background: var(--background-color);
         color: var(--text-primary);
-        background-image: 
-          radial-gradient(at 40% 20%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
-          radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
-          radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+        background-image: radial-gradient(
+            at 40% 20%,
+            rgba(59, 130, 246, 0.1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 80% 0%,
+            rgba(6, 182, 212, 0.1) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 0% 50%,
+            rgba(139, 92, 246, 0.1) 0px,
+            transparent 50%
+          );
       }
 
       /* Enhanced Neumorphism */
-      .shadow-neumorphic-xl { 
-        box-shadow: 
-          20px 20px 40px var(--neumorphic-dark),
+      .shadow-neumorphic-xl {
+        box-shadow: 20px 20px 40px var(--neumorphic-dark),
           -20px -20px 40px var(--neumorphic-light),
-          inset 0 0 0 1px rgba(255,255,255,0.1);
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1);
       }
-      .shadow-neumorphic-lg { 
-        box-shadow: 
-          12px 12px 24px var(--neumorphic-dark),
+      .shadow-neumorphic-lg {
+        box-shadow: 12px 12px 24px var(--neumorphic-dark),
           -12px -12px 24px var(--neumorphic-light);
       }
-      .shadow-neumorphic-sm { 
-        box-shadow: 
-          6px 6px 12px var(--neumorphic-dark),
+      .shadow-neumorphic-sm {
+        box-shadow: 6px 6px 12px var(--neumorphic-dark),
           -6px -6px 12px var(--neumorphic-light);
       }
-      .shadow-neumorphic-inset { 
-        box-shadow: 
-          inset 6px 6px 12px var(--neumorphic-dark),
+      .shadow-neumorphic-inset {
+        box-shadow: inset 6px 6px 12px var(--neumorphic-dark),
           inset -6px -6px 12px var(--neumorphic-light);
       }
 
@@ -95,82 +102,223 @@
       }
 
       /* Enhanced Toggle (Font Awesome icons, no emoji) */
-      .theme-switch { position: relative; display: inline-block; width: 56px; height: 32px; }
-      .theme-switch input { opacity: 0; width: 0; height: 0; }
-      .slider { 
-        position: absolute; cursor: pointer; inset: 0; 
-        background: linear-gradient(135deg, var(--neumorphic-dark), var(--neumorphic-light));
-        transition: .4s; border-radius: 32px; 
-        box-shadow: inset 3px 3px 6px var(--neumorphic-dark), inset -3px -3px 6px var(--neumorphic-light);
+      .theme-switch {
+        position: relative;
+        display: inline-block;
+        width: 56px;
+        height: 32px;
       }
-      .slider .knob { 
-        position: absolute; height: 24px; width: 24px; left: 4px; bottom: 4px; 
-        background: var(--card-bg); border-radius: 50%; 
-        display: flex; align-items: center; justify-content: center; 
-        transition: .4s; font-size: 12px;
-        box-shadow: 3px 3px 6px var(--neumorphic-dark), -3px -3px 6px var(--neumorphic-light);
+      .theme-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
       }
-      .slider .fa-sun { display: none; }
-      input:checked + .slider .knob { transform: translateX(24px); }
-      input:checked + .slider .fa-moon { display: none; }
-      input:checked + .slider .fa-sun { display: inline-block; }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          var(--neumorphic-dark),
+          var(--neumorphic-light)
+        );
+        transition: 0.4s;
+        border-radius: 32px;
+        box-shadow: inset 3px 3px 6px var(--neumorphic-dark),
+          inset -3px -3px 6px var(--neumorphic-light);
+      }
+      .slider .knob {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        left: 4px;
+        bottom: 4px;
+        background: var(--card-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.4s;
+        font-size: 12px;
+        box-shadow: 3px 3px 6px var(--neumorphic-dark),
+          -3px -3px 6px var(--neumorphic-light);
+      }
+      .slider .fa-sun {
+        display: none;
+      }
+      input:checked + .slider .knob {
+        transform: translateX(24px);
+      }
+      input:checked + .slider .fa-moon {
+        display: none;
+      }
+      input:checked + .slider .fa-sun {
+        display: inline-block;
+      }
 
       /* Animations */
-      @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-      @keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); } 50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); } }
-      @keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-      @keyframes slide-in-left { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
-      @keyframes slide-in-right { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
-      @keyframes bounce-in { 0% { opacity: 0; transform: scale(0.3); } 50% { transform: scale(1.05); } 70% { transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
-      @keyframes typewriter { from { width: 0; } to { width: 100%; } }
-      @keyframes blink { 50% { border-color: transparent; } }
-      
-      .animate-float { animation: float 6s ease-in-out infinite; }
-      .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-      .animate-gradient { 
-        background: linear-gradient(-45deg, var(--gradient-start), var(--accent-color), var(--secondary-color), var(--gradient-end));
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+        }
+      }
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      @keyframes slide-in-left {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slide-in-right {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes bounce-in {
+        0% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      .animate-pulse-glow {
+        animation: pulse-glow 3s ease-in-out infinite;
+      }
+      .animate-gradient {
+        background: linear-gradient(
+          -45deg,
+          var(--gradient-start),
+          var(--accent-color),
+          var(--secondary-color),
+          var(--gradient-end)
+        );
         background-size: 400% 400%;
         animation: gradient-shift 4s ease infinite;
       }
 
       /* Interactive Elements */
-      .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-      .hover-lift:hover { transform: translateY(-8px) scale(1.02); }
-      
-      .magnetic { transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-      
-      .glow-on-hover { 
-        position: relative; overflow: hidden;
+      .hover-lift {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hover-lift:hover {
+        transform: translateY(-8px) scale(1.02);
+      }
+
+      .magnetic {
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .glow-on-hover {
+        position: relative;
+        overflow: hidden;
         transition: all 0.3s ease;
       }
       .glow-on-hover::before {
-        content: ''; position: absolute; inset: 0; opacity: 0;
-        background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          rgba(59, 130, 246, 0.3) 0%,
+          transparent 70%
+        );
         transition: opacity 0.3s ease;
       }
-      .glow-on-hover:hover::before { opacity: 1; }
+      .glow-on-hover:hover::before {
+        opacity: 1;
+      }
 
       /* Typewriter Effect */
-      .typewriter { 
-        overflow: hidden; border-right: 3px solid var(--primary-color);
-        white-space: nowrap; margin: 0 auto; letter-spacing: .1em;
+      .typewriter {
+        overflow: hidden;
+        border-right: 3px solid var(--primary-color);
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 0.1em;
         animation: typewriter 3.5s steps(40, end), blink 0.75s step-end infinite;
       }
 
       /* Skill Tags with Enhanced Hover */
       .skill-tag {
-        position: relative; overflow: hidden;
+        position: relative;
+        overflow: hidden;
         background: var(--card-bg);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
       }
       .skill-tag::before {
-        content: ''; position: absolute; inset: 0; 
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        opacity: 0; transition: opacity 0.3s ease;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
-      .skill-tag:hover::before { opacity: 0.1; }
-      .skill-tag:hover { 
+      .skill-tag:hover::before {
+        opacity: 0.1;
+      }
+      .skill-tag:hover {
         transform: translateY(-4px) scale(1.05);
         box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
         color: var(--primary-color);
@@ -178,47 +326,75 @@
 
       /* Portfolio Card Enhancements */
       .portfolio-card {
-        position: relative; overflow: hidden;
+        position: relative;
+        overflow: hidden;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         transform-style: preserve-3d;
       }
       .portfolio-card::after {
-        content: ''; position: absolute; inset: 0;
-        background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.1));
-        opacity: 0; transition: opacity 0.3s ease;
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          transparent,
+          rgba(59, 130, 246, 0.1)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
-      .portfolio-card:hover::after { opacity: 1; }
-      .portfolio-card:hover { 
+      .portfolio-card:hover::after {
+        opacity: 1;
+      }
+      .portfolio-card:hover {
         transform: translateY(-12px) rotateY(5deg) rotateX(5deg);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
       }
 
       /* Smooth Reveal Animation */
-      .reveal { opacity: 0; transform: translateY(30px) scale(0.95); }
-      .reveal.is-visible { 
-        opacity: 1; transform: translateY(0) scale(1);
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
         transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
 
       /* Navigation Enhancements */
-      .nav-link { 
-        position: relative; padding: 8px 16px; border-radius: 12px;
+      .nav-link {
+        position: relative;
+        padding: 8px 16px;
+        border-radius: 12px;
         transition: all 0.3s ease;
       }
       .nav-link::before {
-        content: ''; position: absolute; inset: 0; border-radius: 12px;
-        background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-        opacity: 0; transition: opacity 0.3s ease;
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--accent-color)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
-      .nav-link:hover::before { opacity: 0.1; }
-      .nav-link:hover { 
+      .nav-link:hover::before {
+        opacity: 0.1;
+      }
+      .nav-link:hover {
         transform: translateY(-2px);
         color: var(--primary-color);
       }
 
       /* Reduced Motion */
       @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
           animation-duration: 0.01ms !important;
           animation-iteration-count: 1 !important;
           transition-duration: 0.01ms !important;
@@ -228,63 +404,77 @@
 
     <script>
       // Enhanced theme and interaction logic
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         // Theme management
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && prefersDark)) {
-          document.documentElement.classList.add('dark');
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) && prefersDark)
+        ) {
+          document.documentElement.classList.add("dark");
         }
-        
-        const toggle = document.querySelector('#themeToggle');
+
+        const toggle = document.querySelector("#themeToggle");
         if (toggle) {
-          toggle.checked = document.documentElement.classList.contains('dark');
-          toggle.addEventListener('change', () => {
-            document.documentElement.classList.toggle('dark');
-            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+          toggle.checked = document.documentElement.classList.contains("dark");
+          toggle.addEventListener("change", () => {
+            document.documentElement.classList.toggle("dark");
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
           });
         }
 
         // Enhanced scroll reveal
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                entry.target.classList.add('is-visible');
-              }, index * 100);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, index) => {
+              if (entry.isIntersecting) {
+                setTimeout(() => {
+                  entry.target.classList.add("is-visible");
+                }, index * 100);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
 
         // Mobile navigation
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileNav = document.getElementById('mobileNav');
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileNav = document.getElementById("mobileNav");
         if (menuBtn && mobileNav) {
-          menuBtn.addEventListener('click', () => {
-            const wasHidden = mobileNav.classList.contains('hidden');
-            mobileNav.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', wasHidden ? 'true' : 'false');
+          menuBtn.addEventListener("click", () => {
+            const wasHidden = mobileNav.classList.contains("hidden");
+            mobileNav.classList.toggle("hidden");
+            menuBtn.setAttribute("aria-expanded", wasHidden ? "true" : "false");
           });
         }
 
         // Magnetic effect for interactive elements
-        document.querySelectorAll('.magnetic').forEach((element) => {
-          element.addEventListener('mousemove', (e) => {
+        document.querySelectorAll(".magnetic").forEach((element) => {
+          element.addEventListener("mousemove", (e) => {
             const rect = element.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
           });
-          
-          element.addEventListener('mouseleave', () => {
-            element.style.transform = 'translate(0, 0)';
+
+          element.addEventListener("mouseleave", () => {
+            element.style.transform = "translate(0, 0)";
           });
         });
 
         // Enhanced 3D tilt effect
-        document.querySelectorAll('[data-tilt]').forEach((card) => {
+        document.querySelectorAll("[data-tilt]").forEach((card) => {
           const handleTilt = (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -293,39 +483,40 @@
             const centerY = rect.height / 2;
             const rotateX = ((y - centerY) / centerY) * 10;
             const rotateY = ((centerX - x) / centerX) * 10;
-            
+
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
           };
-          
+
           const resetTilt = () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            card.style.transform =
+              "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
           };
-          
-          card.addEventListener('mousemove', handleTilt);
-          card.addEventListener('mouseleave', resetTilt);
+
+          card.addEventListener("mousemove", handleTilt);
+          card.addEventListener("mouseleave", resetTilt);
         });
 
         // Parallax scrolling effect
-        window.addEventListener('scroll', () => {
+        window.addEventListener("scroll", () => {
           const scrolled = window.pageYOffset;
-          const parallax = document.querySelectorAll('.parallax');
+          const parallax = document.querySelectorAll(".parallax");
           const speed = 0.5;
-          
-          parallax.forEach(element => {
+
+          parallax.forEach((element) => {
             const yPos = -(scrolled * speed);
             element.style.transform = `translateY(${yPos}px)`;
           });
         });
 
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(this.getAttribute("href"));
             if (target) {
               target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+                behavior: "smooth",
+                block: "start",
               });
             }
           });
@@ -338,27 +529,61 @@
     <div class="relative min-h-screen flex flex-col">
       <!-- Enhanced ambient background -->
       <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div class="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-20 animate-float"></div>
-        <div class="absolute top-1/3 -right-40 w-96 h-96 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-20 animate-float" style="animation-delay: -2s"></div>
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-gradient-to-r from-green-400 to-blue-400 opacity-20 animate-float" style="animation-delay: -4s"></div>
+        <div
+          class="absolute -top-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-20 animate-float"
+        ></div>
+        <div
+          class="absolute top-1/3 -right-40 w-96 h-96 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-20 animate-float"
+          style="animation-delay: -2s"
+        ></div>
+        <div
+          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full bg-gradient-to-r from-green-400 to-blue-400 opacity-20 animate-float"
+          style="animation-delay: -4s"
+        ></div>
       </div>
 
       <!-- Enhanced Header -->
       <header class="sticky top-0 z-50 glass border-b border-white/20">
-        <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 py-4 flex items-center justify-between">
+        <div
+          class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 py-4 flex items-center justify-between"
+        >
           <div class="flex items-center gap-3 magnetic">
-            <div class="size-8 text-transparent bg-clip-text animate-gradient font-bold">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="url(#logo-gradient)">
+            <div
+              class="size-8 text-transparent bg-clip-text animate-gradient font-bold"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                fill="url(#logo-gradient)"
+              >
                 <defs>
-                  <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                  <linearGradient
+                    id="logo-gradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: var(--primary-color); stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: var(--accent-color); stop-opacity: 1"
+                    />
                   </linearGradient>
                 </defs>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"/>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z"
+                />
               </svg>
             </div>
-            <h1 class="text-xl font-black tracking-tight bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+            <h1
+              class="text-xl font-black tracking-tight bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent"
+            >
               Arif Yıldırım
             </h1>
           </div>
@@ -380,22 +605,41 @@
                 </span>
               </span>
             </label>
-            
-            <button id="menuBtn" class="md:hidden magnetic glow-on-hover p-2 rounded-xl glass hover-lift" aria-label="Menüyü aç/kapat">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor">
-                <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"/>
+
+            <button
+              id="menuBtn"
+              class="md:hidden magnetic glow-on-hover p-2 rounded-xl glass hover-lift"
+              aria-label="Menüyü aç/kapat"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 256 256"
+                fill="currentColor"
+              >
+                <path
+                  d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+                />
               </svg>
             </button>
-            
-            <div class="w-10 h-10 rounded-full bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] p-0.5 animate-pulse-glow">
-              <div class="w-full h-full rounded-full bg-center bg-cover" style="background-image:url('./profile.jpg')"></div>
+
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] p-0.5 animate-pulse-glow"
+            >
+              <div
+                class="w-full h-full rounded-full bg-center bg-cover"
+                style="background-image: url('./profile.jpg')"
+              ></div>
             </div>
           </div>
         </div>
-        
+
         <!-- Enhanced Mobile Navigation -->
         <div id="mobileNav" class="md:hidden mx-4 mb-4 hidden">
-          <div class="glass rounded-2xl p-4 backdrop-blur-xl border border-white/20">
+          <div
+            class="glass rounded-2xl p-4 backdrop-blur-xl border border-white/20"
+          >
             <div class="flex flex-col space-y-2">
               <a class="nav-link" href="#about">Hakkımda</a>
               <a class="nav-link" href="#experience">Deneyim</a>
@@ -408,41 +652,66 @@
 
       <main class="flex-1 px-6 sm:px-10 md:px-20 lg:px-40 py-12">
         <div class="mx-auto max-w-5xl flex flex-col gap-16">
-          
           <!-- Enhanced About Section -->
           <section id="about" class="reveal">
-            <div class="glass rounded-3xl p-8 md:p-12 shadow-neumorphic-xl glow-on-hover">
+            <div
+              class="glass rounded-3xl p-8 md:p-12 shadow-neumorphic-xl glow-on-hover"
+            >
               <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="flex-shrink-0 relative">
-                  <div class="w-48 h-48 rounded-full bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] p-1 animate-pulse-glow">
-                    <div class="w-full h-full rounded-full bg-cover bg-center shadow-2xl" style="background-image:url('./profile.jpg')"></div>
+                  <div
+                    class="w-48 h-48 rounded-full bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] p-1 animate-pulse-glow"
+                  >
+                    <div
+                      class="w-full h-full rounded-full bg-cover bg-center shadow-2xl"
+                      style="background-image: url('./profile.jpg')"
+                    ></div>
                   </div>
-                  <div class="absolute -bottom-2 -right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-[var(--card-bg)] animate-bounce"></div>
+                  <div
+                    class="absolute -bottom-2 -right-2 w-12 h-12 bg-green-500 rounded-full border-4 border-[var(--card-bg)] animate-bounce"
+                  ></div>
                 </div>
-                
+
                 <div class="flex-1 text-center lg:text-left">
                   <h2 class="text-5xl md:text-6xl font-black mb-4">
-                    <span class="typewriter bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent">
+                    <span
+                      class="typewriter bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent"
+                    >
                       Arif Yıldırım
                     </span>
                   </h2>
-                  <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 mb-6">
-                    <span class="px-4 py-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] text-white rounded-full font-semibold shadow-lg flex items-center gap-2">
+                  <div
+                    class="flex flex-wrap justify-center lg:justify-start items-center gap-4 mb-6"
+                  >
+                    <span
+                      class="px-4 py-2 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] text-white rounded-full font-semibold shadow-lg flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-laptop-code"></i>
                       <span>Yazılım Geliştirici</span>
                     </span>
-                    <span class="px-4 py-2 glass rounded-full font-medium flex items-center gap-2">
+                    <span
+                      class="px-4 py-2 glass rounded-full font-medium flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-location-dot"></i>
                       <span>Ankara, TR</span>
                     </span>
                   </div>
-                  <p class="text-lg text-[var(--text-secondary)] leading-relaxed mb-8">
-                    Yönetim Bilişim Sistemleri mezunuyum. Web geliştirme, sistem desteği ve otomasyon üzerine çalışıyorum. 
-                    Modern teknolojilerle kullanıcı dostu ve performanslı çözümler geliştirmeyi seviyorum.
+                  <p
+                    class="text-lg text-[var(--text-secondary)] leading-relaxed mb-8"
+                  >
+                    Yönetim Bilişim Sistemleri mezunuyum. Web geliştirme, sistem
+                    desteği ve otomasyon üzerine çalışıyorum. Modern
+                    teknolojilerle kullanıcı dostu ve performanslı çözümler
+                    geliştirmeyi seviyorum.
                   </p>
-                  <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                  <div
+                    class="flex flex-wrap justify-center lg:justify-start gap-4"
+                  >
                     <!-- Telefonla iletişim ve CV butonları kaldırıldı; e-posta butonu bırakıldı -->
-                    <a href="mailto:arfyldrm0606@gmail.com" class="px-6 py-3 glass rounded-xl font-semibold hover-lift border border-[var(--primary-color)] text-[var(--primary-color)] magnetic flex items-center gap-2">
+                    <a
+                      href="mailto:arfyldrm0606@gmail.com"
+                      class="px-6 py-3 glass rounded-xl font-semibold hover-lift border border-[var(--primary-color)] text-[var(--primary-color)] magnetic flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-envelope"></i>
                       <span>E‑posta Gönder</span>
                     </a>
@@ -454,40 +723,58 @@
 
           <!-- Enhanced Experience Section -->
           <section id="experience" class="reveal">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3">
+            <h2
+              class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3"
+            >
               <i class="fa-solid fa-briefcase"></i>
               <span>Deneyimlerim</span>
             </h2>
             <div class="space-y-8">
               <div class="glass rounded-2xl p-8 hover-lift glow-on-hover group">
                 <div class="flex items-start gap-6">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform">
+                  <div
+                    class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-laptop-code"></i>
                   </div>
                   <div class="flex-1">
-                    <h3 class="text-2xl font-bold mb-2">Freelance Web Developer</h3>
-                    <p class="text-[var(--primary-color)] font-semibold mb-2">ITB (Remote)</p>
-                    <p class="text-[var(--text-secondary)] text-sm mb-4">2023 - Günümüz</p>
+                    <h3 class="text-2xl font-bold mb-2">
+                      Freelance Web Developer
+                    </h3>
+                    <p class="text-[var(--primary-color)] font-semibold mb-2">
+                      ITB (Remote)
+                    </p>
+                    <p class="text-[var(--text-secondary)] text-sm mb-4">
+                      2023 - Günümüz
+                    </p>
                     <p class="text-[var(--text-secondary)] leading-relaxed">
-                      Modern web teknolojileri kullanarak responsive ve performanslı web siteleri geliştiriyorum. 
-                      React, Django ve çeşitli frontend frameworkleri ile projeler üretiyorum.
+                      Modern web teknolojileri kullanarak responsive ve
+                      performanslı web siteleri geliştiriyorum. React, Django ve
+                      çeşitli frontend frameworkleri ile projeler üretiyorum.
                     </p>
                   </div>
                 </div>
               </div>
-              
+
               <div class="glass rounded-2xl p-8 hover-lift glow-on-hover group">
                 <div class="flex items-start gap-6">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform">
+                  <div
+                    class="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white text-2xl group-hover:scale-110 transition-transform"
+                  >
                     <i class="fa-solid fa-chart-line"></i>
                   </div>
                   <div class="flex-1">
                     <h3 class="text-2xl font-bold mb-2">Muhasebe Stajyeri</h3>
-                    <p class="text-[var(--primary-color)] font-semibold mb-2">Ünal Akpınar İnşaat Turizm A.Ş.</p>
-                    <p class="text-[var(--text-secondary)] text-sm mb-4">2015 - 2016</p>
+                    <p class="text-[var(--primary-color)] font-semibold mb-2">
+                      Ünal Akpınar İnşaat Turizm A.Ş.
+                    </p>
+                    <p class="text-[var(--text-secondary)] text-sm mb-4">
+                      2015 - 2016
+                    </p>
                     <p class="text-[var(--text-secondary)] leading-relaxed">
-                      Finansal raporlama, ERP sistemleri ve muhasebe süreçlerinde deneyim kazandım.
-                      Excel ve raporlama araçları konusunda uzmanlık geliştirdim.
+                      Finansal raporlama, ERP sistemleri ve muhasebe
+                      süreçlerinde deneyim kazandım. Excel ve raporlama araçları
+                      konusunda uzmanlık geliştirdim.
                     </p>
                   </div>
                 </div>
@@ -497,50 +784,94 @@
 
           <!-- Enhanced Skills Section -->
           <section id="skills" class="reveal">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3">
+            <h2
+              class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3"
+            >
               <i class="fa-solid fa-rocket"></i>
               <span>Yeteneklerim</span>
             </h2>
             <div class="glass rounded-3xl p-8 shadow-neumorphic-xl">
-              <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-brands fa-python"></i></div>
+              <div
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+              >
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-brands fa-python"></i>
+                  </div>
                   <span class="font-semibold">Python</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-seedling"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
                   <span class="font-semibold">Django</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-brands fa-git-alt"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-brands fa-git-alt"></i>
+                  </div>
                   <span class="font-semibold">Git</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-database"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
                   <span class="font-semibold">SQL</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-brands fa-ubuntu"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-brands fa-ubuntu"></i>
+                  </div>
                   <span class="font-semibold">Ubuntu</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-headset"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-headset"></i>
+                  </div>
                   <span class="font-semibold">Tech Support</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-layer-group"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-layer-group"></i>
+                  </div>
                   <span class="font-semibold">CMS</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-diagram-project"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-diagram-project"></i>
+                  </div>
                   <span class="font-semibold">ERP</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </div>
                   <span class="font-semibold">Responsive</span>
                 </div>
-                <div class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm">
-                  <div class="text-2xl mb-2"><i class="fa-solid fa-file-excel"></i></div>
+                <div
+                  class="skill-tag p-4 rounded-xl text-center shadow-neumorphic-sm"
+                >
+                  <div class="text-2xl mb-2">
+                    <i class="fa-solid fa-file-excel"></i>
+                  </div>
                   <span class="font-semibold">Excel</span>
                 </div>
               </div>
@@ -549,88 +880,216 @@
 
           <!-- Enhanced Portfolio Section -->
           <section id="portfolio" class="reveal">
-            <h2 class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3">
+            <h2
+              class="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] bg-clip-text text-transparent flex items-center justify-center gap-3"
+            >
               <i class="fa-solid fa-palette"></i>
               <span>Portföyüm</span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              
               <!-- Sobil Cloud -->
-              <a href="https://sobil-cloud.pages.dev/" target="_blank" rel="noreferrer" class="group">
-                <div class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl" data-tilt>
-                  <div class="aspect-video bg-gradient-to-br from-blue-400 to-cyan-400 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image:url('./assets/img/portfolio/sobil.jpg')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              <a
+                href="https://sobil-cloud.pages.dev/"
+                target="_blank"
+                rel="noreferrer"
+                class="group"
+              >
+                <div
+                  class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl"
+                  data-tilt
+                >
+                  <div
+                    class="aspect-video bg-gradient-to-br from-blue-400 to-cyan-400 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute inset-0 bg-center bg-cover"
+                      style="
+                        background-image: url('./assets/img/portfolio/sobil.jpg');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
                       </svg>
                     </div>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2">
+                    <h3
+                      class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-cloud"></i>
                       <span>Sobil Cloud Services</span>
                     </h3>
-                    <p class="text-[var(--text-secondary)] mb-4">Modern bulut hizmetleri için responsive web sitesi</p>
+                    <p class="text-[var(--text-secondary)] mb-4">
+                      Modern bulut hizmetleri için responsive web sitesi
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">HTML</span>
-                      <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full text-xs font-medium">CSS</span>
-                      <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium">JavaScript</span>
+                      <span
+                        class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium"
+                        >HTML</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full text-xs font-medium"
+                        >CSS</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium"
+                        >JavaScript</span
+                      >
                     </div>
                   </div>
                 </div>
               </a>
 
               <!-- Nature Landing -->
-              <a href="https://nature-next.netlify.app/" target="_blank" rel="noreferrer" class="group">
-                <div class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl" data-tilt>
-                  <div class="aspect-video bg-gradient-to-br from-green-400 to-emerald-400 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image:url('./assets/img/portfolio/nature.jpg')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              <a
+                href="https://nature-next.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                class="group"
+              >
+                <div
+                  class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl"
+                  data-tilt
+                >
+                  <div
+                    class="aspect-video bg-gradient-to-br from-green-400 to-emerald-400 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute inset-0 bg-center bg-cover"
+                      style="
+                        background-image: url('./assets/img/portfolio/nature.jpg');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
                       </svg>
                     </div>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2">
+                    <h3
+                      class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-seedling"></i>
                       <span>Nature Landing Page</span>
                     </h3>
-                    <p class="text-[var(--text-secondary)] mb-4">Bootstrap ile geliştirilmiş doğa temalı landing sayfası</p>
+                    <p class="text-[var(--text-secondary)] mb-4">
+                      Bootstrap ile geliştirilmiş doğa temalı landing sayfası
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-xs font-medium">HTML5</span>
-                      <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium">Bootstrap</span>
-                      <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">Responsive</span>
+                      <span
+                        class="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full text-xs font-medium"
+                        >HTML5</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-full text-xs font-medium"
+                        >Bootstrap</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-xs font-medium"
+                        >Responsive</span
+                      >
                     </div>
                   </div>
                 </div>
               </a>
 
               <!-- AI FunHub -->
-              <a href="https://aifunhub.netlify.app/" target="_blank" rel="noreferrer" class="group">
-                <div class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl" data-tilt>
-                  <div class="aspect-video bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-center bg-cover" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14MqeC8NYX3VTMfhm7FWLImwGXtmFrmW9p206pK8gG0f7G8ecKWL-27wszkdFBUBQPnAxhwdlC9p5aAenO7khBxOTFpiqSQ4qofqV7aV0q77_6QH7HfO1I1vDP0ErLQ2P1IhdKHV0vji7Q_cnQAD1P1g61_S8ZIw79eTrMofnA3xUpZWXtVnChPsMRuYllWmEA_J1eEFt5cOrcYUd2Xv8-SrEnHiHwZWQbt2zk70Ef_UyHeOhnqnTZESJ9vmV5AE-AZogddZ_ATk')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <div class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2">
-                      <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              <a
+                href="https://aifunhub.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                class="group"
+              >
+                <div
+                  class="portfolio-card glass rounded-2xl overflow-hidden shadow-neumorphic-xl"
+                  data-tilt
+                >
+                  <div
+                    class="aspect-video bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden"
+                  >
+                    <div
+                      class="absolute inset-0 bg-center bg-cover"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC14MqeC8NYX3VTMfhm7FWLImwGXtmFrmW9p206pK8gG0f7G8ecKWL-27wszkdFBUBQPnAxhwdlC9p5aAenO7khBxOTFpiqSQ4qofqV7aV0q77_6QH7HfO1I1vDP0ErLQ2P1IhdKHV0vji7Q_cnQAD1P1g61_S8ZIw79eTrMofnA3xUpZWXtVnChPsMRuYllWmEA_J1eEFt5cOrcYUd2Xv8-SrEnHiHwZWQbt2zk70Ef_UyHeOhnqnTZESJ9vmV5AE-AZogddZ_ATk');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"
+                    ></div>
+                    <div
+                      class="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2"
+                    >
+                      <svg
+                        class="w-5 h-5 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        ></path>
                       </svg>
                     </div>
                   </div>
                   <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2">
+                    <h3
+                      class="text-xl font-bold mb-2 group-hover:text-[var(--primary-color)] transition-colors flex items-center gap-2"
+                    >
                       <i class="fa-solid fa-robot"></i>
                       <span>AI FunHub SaaS</span>
                     </h3>
-                    <p class="text-[var(--text-secondary)] mb-4">Modern teknolojilerle geliştirilmiş AI tabanlı SaaS platformu</p>
+                    <p class="text-[var(--text-secondary)] mb-4">
+                      Modern teknolojilerle geliştirilmiş AI tabanlı SaaS
+                      platformu
+                    </p>
                     <div class="flex flex-wrap gap-2">
-                      <span class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-full text-xs font-medium">Express.js</span>
-                      <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-xs font-medium">Vite.js</span>
-                      <span class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full text-xs font-medium">Tailwind</span>
+                      <span
+                        class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 rounded-full text-xs font-medium"
+                        >Express.js</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-xs font-medium"
+                        >Vite.js</span
+                      >
+                      <span
+                        class="px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 rounded-full text-xs font-medium"
+                        >Tailwind</span
+                      >
                     </div>
                   </div>
                 </div>
@@ -640,17 +1099,28 @@
             <!-- Call to Action -->
             <div class="mt-12 text-center">
               <div class="glass rounded-2xl p-8 shadow-neumorphic-xl">
-                <h3 class="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
+                <h3
+                  class="text-2xl font-bold mb-4 flex items-center justify-center gap-2"
+                >
                   <i class="fa-solid fa-rocket text-[var(--primary-color)]"></i>
                   <span>Birlikte Çalışalım!</span>
                 </h3>
-                <p class="text-[var(--text-secondary)] mb-6">Projeniz için modern ve performanslı çözümler geliştirmek isterim.</p>
+                <p class="text-[var(--text-secondary)] mb-6">
+                  Projeniz için modern ve performanslı çözümler geliştirmek
+                  isterim.
+                </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                  <a href="#about" class="px-8 py-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] text-white rounded-xl font-semibold hover-lift shadow-lg magnetic flex items-center gap-2">
+                  <a
+                    href="#about"
+                    class="px-8 py-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] text-white rounded-xl font-semibold hover-lift shadow-lg magnetic flex items-center gap-2"
+                  >
                     <i class="fa-solid fa-comments"></i>
                     <span>Proje Teklifi Al</span>
                   </a>
-                  <a href="mailto:arfyldrm0606@gmail.com" class="px-8 py-4 glass rounded-xl font-semibold hover-lift border border-[var(--primary-color)] text-[var(--primary-color)] magnetic flex items-center gap-2">
+                  <a
+                    href="mailto:arfyldrm0606@gmail.com"
+                    class="px-8 py-4 glass rounded-xl font-semibold hover-lift border border-[var(--primary-color)] text-[var(--primary-color)] magnetic flex items-center gap-2"
+                  >
                     <i class="fa-solid fa-envelope"></i>
                     <span>E‑posta Gönder</span>
                   </a>
@@ -662,21 +1132,53 @@
           <!-- New Stats Section -->
           <section class="reveal">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <div class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover">
-                <div class="text-3xl font-black text-[var(--primary-color)] mb-2">2+</div>
-                <div class="text-[var(--text-secondary)] font-medium">Yıl Deneyim</div>
+              <div
+                class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover"
+              >
+                <div
+                  class="text-3xl font-black text-[var(--primary-color)] mb-2"
+                >
+                  2+
+                </div>
+                <div class="text-[var(--text-secondary)] font-medium">
+                  Yıl Deneyim
+                </div>
               </div>
-              <div class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover">
-                <div class="text-3xl font-black text-[var(--primary-color)] mb-2">15+</div>
-                <div class="text-[var(--text-secondary)] font-medium">Tamamlanan Proje</div>
+              <div
+                class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover"
+              >
+                <div
+                  class="text-3xl font-black text-[var(--primary-color)] mb-2"
+                >
+                  15+
+                </div>
+                <div class="text-[var(--text-secondary)] font-medium">
+                  Tamamlanan Proje
+                </div>
               </div>
-              <div class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover">
-                <div class="text-3xl font-black text-[var(--primary-color)] mb-2">10+</div>
-                <div class="text-[var(--text-secondary)] font-medium">Memnun Müşteri</div>
+              <div
+                class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover"
+              >
+                <div
+                  class="text-3xl font-black text-[var(--primary-color)] mb-2"
+                >
+                  10+
+                </div>
+                <div class="text-[var(--text-secondary)] font-medium">
+                  Memnun Müşteri
+                </div>
               </div>
-              <div class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover">
-                <div class="text-3xl font-black text-[var(--primary-color)] mb-2">24/7</div>
-                <div class="text-[var(--text-secondary)] font-medium">Destek</div>
+              <div
+                class="glass rounded-2xl p-6 text-center hover-lift glow-on-hover"
+              >
+                <div
+                  class="text-3xl font-black text-[var(--primary-color)] mb-2"
+                >
+                  24/7
+                </div>
+                <div class="text-[var(--text-secondary)] font-medium">
+                  Destek
+                </div>
               </div>
             </div>
           </section>
@@ -688,23 +1190,51 @@
         <div class="max-w-5xl mx-auto px-6 text-center">
           <div class="flex justify-center items-center gap-6 mb-8">
             <!-- Sosyal ikonlar kendi SVG'leriyle bırakıldı -->
-            <a href="#" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]" aria-label="Twitter">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            <a
+              href="#"
+              class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]"
+              aria-label="Twitter"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                />
+              </svg>
             </a>
-            <a href="https://www.linkedin.com/in/arif-y%C4%B1ld%C4%B1r%C4%B1m/" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]" aria-label="Facebook">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <a
+              href="https://www.linkedin.com/in/arif-y%C4%B1ld%C4%B1r%C4%B1m/"
+              class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]"
+              aria-label="Facebook"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
             </a>
-            <a href="https://github.com/Thunder-png" class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]" aria-label="GitHub">
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a
+              href="https://github.com/Thunder-png"
+              class="w-12 h-12 glass rounded-full flex items-center justify-center hover-lift magnetic text-[var(--primary-color)]"
+              aria-label="GitHub"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
             </a>
           </div>
-          
+
           <div class="glass rounded-xl p-6 mb-8">
             <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-              <i class="fa-solid fa-address-card text-[var(--primary-color)]"></i>
+              <i
+                class="fa-solid fa-address-card text-[var(--primary-color)]"
+              ></i>
               <span>İletişim</span>
             </h3>
-            <div class="flex flex-wrap justify-center gap-6 text-[var(--text-secondary)]">
+            <div
+              class="flex flex-wrap justify-center gap-6 text-[var(--text-secondary)]"
+            >
               <div class="flex items-center gap-2">
                 <i class="fa-solid fa-envelope"></i>
                 <span>arfyldrm0606@gmail.com</span>
@@ -715,7 +1245,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="border-t border-white/20 pt-8">
             <p class="text-[var(--text-secondary)] mb-4">
               © <span id="year"></span> Arif Yıldırım. Tüm hakları saklıdır.
@@ -730,17 +1260,19 @@
 
     <script>
       // Set current year
-      document.getElementById('year').textContent = new Date().getFullYear();
-      
+      document.getElementById("year").textContent = new Date().getFullYear();
+
       // Add smooth scrolling to top button
-      const scrollToTop = document.createElement('button');
-      scrollToTop.innerHTML = '↑';
-      scrollToTop.className = 'fixed bottom-8 right-8 w-12 h-12 glass rounded-full shadow-neumorphic-lg hover-lift magnetic text-[var(--primary-color)] font-bold text-xl z-50 opacity-0 transition-opacity';
-      scrollToTop.onclick = () => window.scrollTo({top: 0, behavior: 'smooth'});
+      const scrollToTop = document.createElement("button");
+      scrollToTop.innerHTML = "↑";
+      scrollToTop.className =
+        "fixed bottom-8 right-8 w-12 h-12 glass rounded-full shadow-neumorphic-lg hover-lift magnetic text-[var(--primary-color)] font-bold text-xl z-50 opacity-0 transition-opacity";
+      scrollToTop.onclick = () =>
+        window.scrollTo({ top: 0, behavior: "smooth" });
       document.body.appendChild(scrollToTop);
-      
-      window.addEventListener('scroll', () => {
-        scrollToTop.style.opacity = window.pageYOffset > 300 ? '1' : '0';
+
+      window.addEventListener("scroll", () => {
+        scrollToTop.style.opacity = window.pageYOffset > 300 ? "1" : "0";
       });
     </script>
   </body>
